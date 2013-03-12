@@ -13,7 +13,7 @@ SRCS	=	$(SRCS_FOLDER)/lisp.c\
 
 MAIN	=	$(SRCS_FOLDER)/main.c
 
-TEST	=	$(SRCS_FOLDER)/test.c
+TEST	=	./tests/test.c
 
 OBJS	=	$(SRCS:.c=.o) $(MAIN:.c=.o)
 
