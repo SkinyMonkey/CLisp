@@ -1,12 +1,19 @@
+SRCS_FOLDER	= ./srcs
+
 CC	=	clang
 
-CFLAGS	=	-Wall -Wextra -g3
+INCS	=	-I./incs
 
-SRCS	=	lisp.c arithmetics.c statements.c booleans.c
+CFLAGS	=	-Wall -Wextra -g3 $(INCS)
 
-MAIN	=	main.c
+SRCS	=	$(SRCS_FOLDER)/lisp.c\
+		$(SRCS_FOLDER)/arithmetics.c\
+		$(SRCS_FOLDER)/statements.c\
+		$(SRCS_FOLDER)/booleans.c
 
-TEST	=	test.c
+MAIN	=	$(SRCS_FOLDER)/main.c
+
+TEST	=	$(SRCS_FOLDER)/test.c
 
 OBJS	=	$(SRCS:.c=.o) $(MAIN:.c=.o)
 
@@ -17,6 +24,8 @@ all:	$(OBJS)
 
 test:	$(TESTOBJS)
 	$(CC) $(TESTOBJS)
+	@echo "Testing"
+	@echo "------------------------------------------------------"
 	./a.out
 
 clean:
